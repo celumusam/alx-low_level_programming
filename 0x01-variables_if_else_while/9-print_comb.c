@@ -2,8 +2,9 @@
 
 /**
  * main – main function
- *
- * Return: Always 0
+ * Descripution: print all single number of base 10
+ * starting from 0, following a new line
+ * Return: 0
  */
 
 int main(void)
