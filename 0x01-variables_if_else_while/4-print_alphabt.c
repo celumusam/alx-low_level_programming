@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 /**
- * main - Prints the alphabet withou q and e.
+ * main -main function
  *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
 int main(void)
 {
-	int i;
+char i;
 
-	for (i = 97; i < 123; i++)
-	{
-		putchar(i);
-	}
-	putchar('\n');
-	return (0);
+for (i = 'a' ; i <= 'z' ; i++)
+if (i != 'q' && i != 'e')
+putchar(i);
+putchar('\n');
+return (0);
 }
+
