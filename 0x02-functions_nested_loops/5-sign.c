@@ -7,8 +7,8 @@
  */
 
 int print_sign(int n)
-
 {
+	(void)x;
 	if (n > 0)
 	{
 	_putchar(43);
