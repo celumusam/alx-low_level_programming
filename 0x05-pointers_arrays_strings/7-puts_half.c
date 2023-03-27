@@ -1,19 +1,33 @@
 #include "main.h"
 
 /**
- * _strlen - return the length of a string
- * @s: string
- * Return: length
+ * puts_halt - print halt of a string
+ * @str: The string to print
+ * Return: void
  */
 
-int _strlen(char *s)
+int puts_halt(char *str)
 {
-int longi = 0;
+int j = 0;
+int k;
 
-while (*s != '\0')
+while (str[j] != '\0')
 {
-longi++;
-s++;
+j++;
 }
-return (longi);
+if (j % 2 == 1)
+{
+k = (j - 1) / 2;
+k += 1;
+}
+else
+{
+k = j / 2;
+}
+for (; k < j; k++)
+{
+_putchar(str[k]);
+}
+_putchar('\n');
+return (0);
 }
