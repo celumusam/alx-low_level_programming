@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *
- *
- * Return: the int convertred from the string
+ * _atoi - convert a string to an integer
+ *@s: The pointer to convert
+ * Return: A integer
  */
 
 int _atoi(char *s)
