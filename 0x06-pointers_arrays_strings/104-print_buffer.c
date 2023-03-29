@@ -30,12 +30,12 @@ else
 printf(" ");
 if (i % 2)
 {
-printf(" ")
+printf(" ");
 }
 }
 for (i = 0; i < j; i++)
 {
-int c + *(b + o + i);
+int c = *(b + o + i);
 
 if (c < 32 || c > 132)
 {
