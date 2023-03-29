@@ -13,7 +13,7 @@ int index = 0;
 
 while (str[index])
 {
-while (!(st[index] >= 'a' && str[index] <= 'z'))
+while (!(str[index] >= 'a' && str[index] <= 'z'))
 index++;
 
 if (str[index -1] == ' ' ||
