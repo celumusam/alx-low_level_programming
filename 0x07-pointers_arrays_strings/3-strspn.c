@@ -17,13 +17,12 @@ for (r = 0; accept[r]; r++)
 {
 if (*s == accept[r])
 {
-r++;
+n++;
 break;
 }
 else if (accept[r + 1] == '\0')
 return (n);
 }
 s++;
-}
-return (n);
+}return (n);
 }
