@@ -62,7 +62,7 @@ int index = 0, words, w, letters, l;
 if (str == NULL || str[0] == '\0')
 return (NULL);
 
-word = count_words(str);
+words = count_words(str);
 if (words == 0)
 return (NULL);
 
@@ -76,7 +76,7 @@ while (str[index] == ' ')
 index++;
 
 letters = word_len(str + index);
-string[w] malloc(sizeof(char) * (letters + 1));
+strings[w] malloc(sizeof(char) * (letters + 1));
 if (strings[w] == NULL)
 {
 for (; w >= 0; w--)
