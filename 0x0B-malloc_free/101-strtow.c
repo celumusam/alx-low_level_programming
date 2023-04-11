@@ -55,6 +55,7 @@ return (words);
  * Otherwise - a pointer to an array of string (words).
  */
 char **strtow(char *str)
+{
 char **strings;
 int index = 0, words, w, letters, l;
 
