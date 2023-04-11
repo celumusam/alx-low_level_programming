@@ -14,7 +14,7 @@ char **strtow(char *str);
  */
 int word_len(char *str)
 {
-int index = 0, len 0;
+int index = 0, len = 0;
 
 while (*(str + index) && *(str + index) != ' ')
 {
@@ -25,7 +25,7 @@ return (len);
 }
 
 /**
- * count_words- count the number of words contained within a string.
+ * count_words- Count the number of words contained within a string.
  * @str: The string to be searched.
  *
  * Return: The number of words contained within str.
