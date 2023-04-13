@@ -151,7 +151,7 @@ for (; *final_prod != 'x'; final_prod--)
 {
 num = (*(final_prod - '0') + (*next_prod - '0');
 num += tens;
-*final+prod = (num % 10) + '0';
+*final_prod = (num % 10) + '0';
 tens = num / 10;
 
 final_prod--;
@@ -206,9 +206,8 @@ putchar(final_prod[index]);
 }
 putchar('\n');
 
-free (next_prod);
+free(next_prod);
 free(final_prod);
-
 return (0);
 }
 
