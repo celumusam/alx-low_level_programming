@@ -39,7 +39,7 @@ nptr = malloc(new_size);
 
 if (nptr == NULL)
 return (NULL);
-for (i = 0, i < old_size && i < new_size; i++)
+for (i = 0; i < old_size && i < new_size; i++)
 {
 nptr[i] = ((char *) ptr)[i];
 }
