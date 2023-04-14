@@ -149,7 +149,14 @@ next_prod++;
 
 for (; *final_prod != 'x'; final_prod--)
 {
-num = (*(final_prod - '0') + (*next_prod - '0');
+num = (*final_prod - '0') + (*next_prod - '0');
+num += tens;
+*final_prod = (num % 10) + '0';
+tens = num / 10;
+}
+for (; next_len >= 0 *next_prod != 'x'; next_len--)
+{
+num = (*next_prod - '0');
 num += tens;
 *final_prod = (num % 10) + '0';
 tens = num / 10;
@@ -186,7 +193,7 @@ if (*(argv[2]) == '0')
 argv[2] = iterate_zeroes(argv[2]);
 if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
 {
-printf("0\m");
+printf("0\n");
 return (0);
 }
 size = find_len(argv[1] + find_len(argv[2]);
