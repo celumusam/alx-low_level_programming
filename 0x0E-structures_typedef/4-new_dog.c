@@ -21,7 +21,7 @@ return (i);
 }
 
 /**
- * *_strcpy - copies the string pointer to by scr
+ * *_strcpy - copies the string pointer to by src
  * including the terminating null byte (\0)
  * to the buffer pointer to by dest
  * @dest: pointer to the buffer in which we copy the string
@@ -32,6 +32,7 @@ return (i);
 char *_strcpy(char *dest, char *src)
 {
 int len, i;
+
 len = 0;
 
 while (src[len] != '\0')
@@ -54,7 +55,7 @@ return (dest);
  * @age: age of the dog
  * @owner: owner of the dog
  *
- * Return: pointer to the new dog (Succress), NULL otherwise
+ * Return: pointer to the new dog (Success), NULL otherwise
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
