@@ -64,6 +64,10 @@ int len1, len2;
 len1 = _strlen(name);
 len2 = _strlen(owner);
 
+dog = malloc(sizeof(dog_t));
+if (dog == NULL)
+return (NULL);
+
 dog = malloc(sizeof(char) * (len1 + 1));
 if (dog->name == NULL)
 {
