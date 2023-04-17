@@ -41,7 +41,7 @@ len++;
 
 for (i = 0; i < len; i++)
 {
-dest[i] = scr[i]
+dest[i] = src[i];
 }
 dest[i] = '\0';
 
@@ -82,3 +82,4 @@ _strcpy(dog->owner, owner);
 dog->age = age;
 
 return (dog);
+}
