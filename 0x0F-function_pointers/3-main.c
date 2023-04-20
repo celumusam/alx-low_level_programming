@@ -1,4 +1,4 @@
-#include "function_pointer."
+#include "function_pointers.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include "3-calc.h"
@@ -12,7 +12,7 @@
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-int num1, numw;
+int num1, num2;
 char *op;
 
 if (argc != 4)
@@ -23,7 +23,7 @@ exit(98);
 
 num1 = atoi(argv[1]);
 op = argv[2];
-num2 = atoi(argv[3];
+num2 = atoi(argv[3]);
 
 if (get_op_func(op) == NULL || op[1] != '\0')
 {
@@ -34,7 +34,7 @@ exit(99);
 if ((*op == '/' && num2 == 0) ||
 (*op == '%' && num2 == 0))
 {
-prinf("Error\n");
+printf("Error\n");
 exit(100);
 }
 
