@@ -13,7 +13,7 @@ int diff;
 listint_t *temp;
 
 if (!h || !*h)
-{return (0);
+return (0);
 
 while (*h)
 {
@@ -36,5 +36,4 @@ len++;
 *h = NULL;
 
 return (len);
-}
 }
