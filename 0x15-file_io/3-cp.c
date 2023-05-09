@@ -35,7 +35,7 @@ int c;
 c = close(fd);
 if (c == -1)
 {
-dprintd(STDERR_FILENO, "Error; Can't close fd %d\n", fd);
+dprintf(STDERR_FILENO, "Error; Can't close fd %d\n", fd);
 exit(100);
 }
 }
@@ -45,7 +45,7 @@ exit(100);
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
  *
- * Return: 0 on success
+ * Return: 0 on success.
  *
  * Description: if the argument count is correct - exit code 97.
  * if file_from does not exist or cannot be read - exit code 98.

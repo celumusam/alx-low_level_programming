@@ -51,11 +51,11 @@ int index;
 
 printf(" Magic: ");
 
-for (index = 0; index < El_NIDENT; index++)
+for (index = 0; index < EI_NIDENT; index++)
 {
 printf("%02x", e_ident[index]);
 
-if (index == El_NIDENT - 1)
+if (index == EI_NIDENT - 1)
 printf("\n");
 else
 printf(" ");
@@ -70,7 +70,7 @@ void print_class(unsigned char *e_ident)
 {
 printf(" Class: ");
 
-switch (e_ident[El_ClASS])
+switch (e_ident[EI_CLASS])
 {
 case ELFCLASSNONE:
 printf("none\n");
@@ -83,7 +83,7 @@ case ELFCLASS64:
 printf("ELF64\n");
 break;
 default:
-printf("<unknown: %x>\n", e_ident[El_CLASS]);
+printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 }
 }
 
@@ -95,7 +95,7 @@ void print_data(unsigned char *e_ident)
 {
 printf(" Data: ");
 
-switch (e_ident[El_DATA])
+switch (e_ident[EI_DATA])
 {
 case ELFDATANONE:
 printf("none\n");
@@ -107,7 +107,7 @@ case ELFDATA2MSB:
 printf("2's complement, big endian\n");
 break;
 default:
-printf("<unkonwn: %x>\n", e_ident[El_CLASS]);
+printf("<unkonwn: %x>\n", e_ident[EI_CLASS]);
 }
 }
 
@@ -118,8 +118,8 @@ printf("<unkonwn: %x>\n", e_ident[El_CLASS]);
 void print_version(unsigned char *e_ident)
 {
 printf(" Version: %d",
-	e_ident[El_VERSION]);
-switch (e_ident[El_VERSION])
+	e_ident[EI_VERSION]);
+switch (e_ident[EI_VERSION])
 {
 case EV_CURRENT:
 printf(" (current)\n");
@@ -138,7 +138,7 @@ void print_osabi(unsigned char *e_ident)
 {
 printf(" OS/ABI: ");
 
-switch (e_ident[El_OSABI])
+switch (e_ident[EI_OSABI])
 {
 case ELFOSABI_NONE:
 printf("UNIX - System V\n");
@@ -170,8 +170,8 @@ break;
 case ELFOSABI_STANDALONE:
 printf("Standalone App\n");
 break;
-default;
-printf("<unknown: %x>\n", e_ident[El_OSABI]);
+default:
+printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 }
 }
 
@@ -182,7 +182,7 @@ printf("<unknown: %x>\n", e_ident[El_OSABI]);
 void print_abi(unsigned char *e_ident)
 {
 printf(" ABI Version: %d\n",
-	e_ident[El_ABIVERSION]);
+	e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -192,7 +192,7 @@ printf(" ABI Version: %d\n",
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
-if (e_ident[El_DATA] == ELFDATA2MSB)
+if (e_ident[EI_DATA] == ELFDATA2MSB)
 e_type >>= 8;
 printf(" Type: ");
 
@@ -213,7 +213,7 @@ break;
 case ET_CORE:
 printf("CORE (Core file)\n");
 break;
-default;
+default:
 printf("<unknown: %x>\n", e_type);
 }
 }
@@ -227,7 +227,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
 printf(" Entry point address: ");
 
-if (e_ident[El_CLASS] == ELFCLASS32)
+if (e_ident[EI_CLASS] == ELFCLASS32)
 printf("%#x\n", (unsigned int)e_entry);
 
 else
@@ -272,7 +272,7 @@ if (o == -1)
 dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 exit(98);
 }
-header = malloc(sizeof(El64_Ehdr));
+header = malloc(sizeof(Elf64_Ehdr));
 if (header == NULL)
 {
 close_elf(o);
@@ -297,7 +297,7 @@ print_version(header->e_ident);
 print_osabi(header->e_ident);
 print_abi(header->e_ident);
 print_type(header->e_type, header->e_ident);
-print_entry(header->e_entry, header->ident);
+print_entry(header->e_entry, header->e_ident);
 
 free(header);
 close_elf(o);
