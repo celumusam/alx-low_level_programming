@@ -24,6 +24,9 @@ dprintf(STDERR_FILENO,
 exit(99);
 }
 
+return (buffer);
+}
+
 /**
  * close_file - Closes file descriptors.
  * @fd: The file descriptor to be closed.
